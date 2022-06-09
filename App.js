@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View, TextInput, Button } from "react-native";
+import FetchCities from "./components/FetchCities";
+import Switch from "./components/Switch";
 
 export default function App() {
   const [name, setName] = useState("Text");
@@ -25,6 +27,8 @@ export default function App() {
         }}
         title="Hämta städer"
       />
+      <FetchCities />
+      <Switch />
       <StatusBar style="auto" />
     </View>
   );
