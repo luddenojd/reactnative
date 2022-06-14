@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { FlatList, Text, View } from "react-native";
-export default function fetchCities() {
+export default function FetchCities() {
   const [cities, setCities] = useState(null);
   useEffect(() => {
     fetch("https://avancera.app/cities/")
@@ -11,14 +11,16 @@ export default function fetchCities() {
       });
   }, []);
   return (
-    <FlatList
-      data={cities}
-      renderItem={({ item }) => (
-        <View>
-          <Text>{item.name}</Text>
-        </View>
-      )}
-      keyExtractor={(city) => city.id}
-    />
+    <View>
+      <FlatList
+        data={cities}
+        renderItem={({ item }) => (
+          <View>
+            <Text>{item.name}</Text>
+          </View>
+        )}
+        keyExtractor={(city) => city.id}
+      />
+    </View>
   );
 }
