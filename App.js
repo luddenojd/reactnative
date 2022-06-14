@@ -6,6 +6,7 @@ import Switch from "./components/Switch";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import FetchBeer from "./components/FetchBeer";
+import AddNewBrew from "./components/AddBeer";
 
 export default function App() {
   const [name, setName] = useState("Text");
@@ -14,7 +15,7 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="Home" component={Switch} />
-        <Stack.Screen name="Details" component={FetchCities} />
+        <Stack.Screen name="Details" component={AddNewBrew} />
         <Stack.Screen name="Beer" component={FetchBeer} />
       </Stack.Navigator>
       {/* <View style={styles.container}>

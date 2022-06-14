@@ -28,6 +28,11 @@ export default function Switching({ navigation }) {
         title={"rate some brews"}
         onPress={pressHandler2}
       />
+      <Button
+        style={styles.buttonStyle}
+        title={"add some brews"}
+        onPress={pressHandler}
+      />
     </View>
   );
 }
@@ -37,7 +42,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "lightblue",
+    backgroundColor: "black",
   },
   beerStyle: {
     width: 300,

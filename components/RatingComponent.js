@@ -11,7 +11,6 @@ import {
 export default function Rating() {
   const [defaultRating, setdefaultRating] = useState(2);
   const [maxRating, setmaxRating] = useState([1, 2, 3, 4, 5]);
-
   const starImgFilled =
     "https://raw.githubusercontent.com/tranhonghan/images/main/star_filled.png";
   const starImgCorner =
@@ -55,7 +54,7 @@ export default function Rating() {
           alert("You gave this brew a rating of " + defaultRating + " stars!")
         }
       >
-        <Text>Get selected value</Text>
+        <Text style={styles.textButton}>Get selected value</Text>
       </TouchableOpacity>
     </SafeAreaView>
   );
@@ -71,6 +70,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontSize: 23,
     marginTop: 20,
+    color: "white",
   },
   customRatingBarStyle: {
     justifyContent: "center",
@@ -88,5 +88,8 @@ const styles = StyleSheet.create({
     marginTop: 30,
     padding: 15,
     backgroundColor: "green",
+  },
+  textButton: {
+    color: "white",
   },
 });

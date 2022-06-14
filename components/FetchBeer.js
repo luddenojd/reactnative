@@ -41,10 +41,12 @@ const styles = StyleSheet.create({
     display: "flex",
     alignItems: "center",
     border: "solid black 1px",
-    backgroundColor: "lightblue",
+
+    backgroundColor: "black",
   },
   textStyle: {
     fontSize: 20,
     margin: 20,
+    color: "white",
   },
 });
