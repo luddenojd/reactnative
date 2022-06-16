@@ -1,11 +1,19 @@
 import { useEffect, useState } from "react";
-import { FlatList, Text, View, Image, StyleSheet } from "react-native";
+import {
+  FlatList,
+  Text,
+  View,
+  Image,
+  StyleSheet,
+  Dimensions,
+} from "react-native";
 import Rating from "./RatingComponent";
+import { SwiperFlatList } from "react-native-swiper-flatlist";
 export default function FetchBeers({ navigation }) {
   const [beers, setBeers] = useState(null);
-  // const picture = navigation.navigate("beerpics", { picture });
+
   useEffect(() => {
-    fetch("http://192.168.3.76:3000/api/beers")
+    fetch("http://192.168.0.33:3000/api/beers")
       .then((response) => response.json())
       .then((result) => {
         setBeers(result.beers);
@@ -13,7 +21,7 @@ export default function FetchBeers({ navigation }) {
       });
   }, []);
   return (
-    <FlatList
+    <SwiperFlatList
       data={beers}
       renderItem={({ item }) => (
         <View style={styles.slide}>
@@ -30,17 +38,21 @@ export default function FetchBeers({ navigation }) {
   );
 }
 
+const { width } = Dimensions.get("window");
+
 const styles = StyleSheet.create({
   img: {
-    width: 80,
-    height: 150,
+    width: 150,
+    height: 200,
     marginTop: 10,
     marginBottom: 10,
+    resizeMode: "contain",
   },
   slide: {
     display: "flex",
     alignItems: "center",
     border: "solid black 1px",
+    width,
 
     backgroundColor: "black",
   },
