@@ -1,13 +1,4 @@
-import { useState } from "react";
-import {
-  View,
-  Switch,
-  StyleSheet,
-  Button,
-  Image,
-  TouchableOpacity,
-  Text,
-} from "react-native";
+import { View, StyleSheet, Image, TouchableOpacity, Text } from "react-native";
 import beerglass from "../assets/beerglass.png";
 import { material } from "react-native-typography";
 
@@ -26,7 +17,7 @@ export default function Switching({ navigation }) {
         BIRA
         <Image style={styles.beerStyle} source={beerglass} />
       </Text>
-      <Text style={styles.textStyle}>Rate and add beer!</Text>
+      <Text style={styles.textStyle}>Rate some cold brewskis!</Text>
       <View style={styles.buttonContainer}>
         <TouchableOpacity style={styles.buttonStyle1} onPress={pressHandler2}>
           <Text style={styles.textStyle}>Rate Brews!</Text>

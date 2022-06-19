@@ -1,13 +1,10 @@
 import {
   TextInput,
-  SafeAreaView,
   StyleSheet,
-  Button,
   View,
   TouchableOpacity,
   Text,
 } from "react-native";
-import { useState } from "react";
 import { Formik } from "formik";
 import * as yup from "yup";
 
@@ -31,7 +28,7 @@ export default function AddNewBrew() {
           actions.resetForm();
           alert("You added a new beer!");
           addIt(values);
-          fetch("http://192.168.0.33:3000/api/beers", {
+          fetch("http://10.0.2.2:3000/api/beers", {
             method: "POST",
             headers: {
               Accept: "application/json",
@@ -123,9 +120,10 @@ const styles = StyleSheet.create({
   },
   inputStyle: {
     color: "yellow",
-    margin: 25,
+    margin: 15,
     borderWidth: 1,
     borderColor: "yellow",
+    padding: 3,
   },
   buttonStyle: {
     alignItems: "center",

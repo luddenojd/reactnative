@@ -1,19 +1,12 @@
 import { useEffect, useState } from "react";
-import {
-  FlatList,
-  Text,
-  View,
-  Image,
-  StyleSheet,
-  Dimensions,
-} from "react-native";
+import { Text, View, Image, StyleSheet, Dimensions } from "react-native";
 import Rating from "./RatingComponent";
 import { SwiperFlatList } from "react-native-swiper-flatlist";
 export default function FetchBeers({ navigation }) {
   const [beers, setBeers] = useState(null);
 
   useEffect(() => {
-    fetch("http://192.168.0.33:3000/api/beers")
+    fetch("http://10.0.2.2:3000/api/beers")
       .then((response) => response.json())
       .then((result) => {
         setBeers(result.beers);

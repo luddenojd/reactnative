@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View, TextInput, Button } from "react-native";
+import { StyleSheet } from "react-native";
 import Switch from "./components/Switch";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
@@ -12,7 +12,7 @@ export default function App() {
   const Stack = createNativeStackNavigator();
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator style={styles.navigatorStyle}>
         <Stack.Screen name="Home" component={Switch} />
         <Stack.Screen name="Details" component={AddNewBrew} />
         <Stack.Screen name="Beer" component={FetchBeer} />
@@ -32,5 +32,9 @@ const styles = StyleSheet.create({
   textInput: {
     backgroundColor: "white",
     borderWidth: 1,
+  },
+
+  navigatorStyle: {
+    backgroundColor: "blue",
   },
 });
